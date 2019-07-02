@@ -1,0 +1,27 @@
+RETR_LIST 	
+retrieves all of the contours without establishing any hierarchical relationships.
+
+
+Normally we use the cv.findContours() function to detect objects in an image, right ? 
+Sometimes objects are in different locations.
+ But in some cases, some shapes are inside other shapes. 
+Just like nested figures. In this case, we call outer one as parent and inner one as child. 
+This way, contours in an image has some relationship to each other. And we can specify how one contour is connected to each other, like, 
+is it child of some other contour, or is it a parent etc. Representation of this relationship is called the Hierarchy.
+
+
+RETR_EXTERNAL
+
+If you use this flag, it returns only extreme outer flags. All child contours are left behind. We can say, under this law, 
+Only the eldest in every family is taken care of. It doesn't care about other members of the family :).
+
+
+In computer vision and image processing, image moments are often used to characterize the shape of an object in an image. These moments capture basic statistical properties of the shape, including the area of the object, the centroid (i.e., the center (x, y)-coordinates of the object), orientation, along with other desirable properties.
+
+Here we are only interested in the center of the contour, which we compute on Lines 28 and 29.
+
+From there, Lines 32-34 handle:
+
+Drawing the outline of the contour surrounding the current shape by making a call to cv2.drawContours .
+Placing a white circle at the center (cX, cY) -coordinates of the shape.
+Writing the text center  near the white circle.
